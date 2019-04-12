@@ -1,5 +1,4 @@
 
 
-export var MyLocalStorage = {
-    
-}
+export var MyFavorites = ["Stockholm", "Skåne", "Göteborg"];
+
