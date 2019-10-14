@@ -2,19 +2,19 @@ import React from 'react';
 import {MyFavorites} from '../LocalStorageHandler';
 import { BrowserRouter, Route } from 'react-router-dom';
 import DetailView from './DetailView';
+import { BrowserRouter as Router} from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { WeatherAPI } from '../WeatherAPI'
 
 
 export default class SearchBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-
+            WeatherData: []
         }
     }
 
-    componentDidMount(){
-        // To do
-    }
     /*
     <BrowserRouter>
         <div className="pageContent">
@@ -35,27 +35,14 @@ export default class SearchBar extends React.Component {
     */
    HandleFavoritesChange = (event) =>{
        console.log("FavvO: "+event.target.value);
+
    }
 
+
+
     render(){
-        let favorites = MyFavorites.map((favvo)=>{
-            return (
-            <Route
-                exact
-                path="/"
-                component={()=> <DetailView city={favvo[0]}></DetailView>}
-            >
-                <option value={favvo}>{favvo}</option>
-            </Route>);
-        });
-        let newfavorites = (<BrowserRouter>{favorites}</BrowserRouter>);
         return(
-        
             <div id="searchBar">
-                <label>Favoriter</label>
-                <select onChange={this.HandleFavoritesChange} value={this.onSelect}>
-                    {newfavorites}
-                </select>
                 <label>Sök</label>
                 <input id="serachField" type="text"></input>
                 <button type="button"></button>

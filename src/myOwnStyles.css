@@ -1,3 +1,36 @@
 .WeatherApp{
     text-align: center;
 }
+
+.WeatherNow{
+    background-color: lightgreen;
+    height: 100vh;
+    width: 75vw;
+    text-align: center;
+    margin: 0 12.5% 0 12.5%;
+}
+.WeatherNowInner{
+    width: 25vw;
+    height: 25vh;
+    padding: 5% 25vw 45% 25vw;
+    border: red 1px dotted; /* TO-REMOVE */
+}
+
+body{
+    background-color: lightblue;
+}
+
+.FavoriteBox{
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+    float: left;
+}
+
+.DetailView {
+    border: 1px blue dotted;
+    position: relative;
+    right: 25vw;
+    top: 5vh;
+    height: 100%;
+}
