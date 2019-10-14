@@ -16,7 +16,8 @@ export var API_Weather_Module = (function () {
         let x = await fetch(url);
         let data = await x.json();
         console.log("API: "+JSON.stringify(data.results.locations));
-        return data;//.results.locations.adminArea5;
+        console.log("Hej hej");
+        return data;//.results.locations.adminArea5;// hej
     }
 
     async function getWeather(city){
