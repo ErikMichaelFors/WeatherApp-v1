@@ -28,8 +28,8 @@ export var API_Weather_Module = (function () {
         return data;
     }
 
-    async function getFiveDayForecast(){
-        let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&APPID=${API_KEY}&units=metric`;
+    async function getFiveDayForecast(thiscity, thiscountry){
+        let url = `http://api.openweathermap.org/data/2.5/forecast?q=${thiscity},${thiscountry}&APPID=${API_KEY}&units=metric`;
         let x = await fetch(url);
         let data = await x.json();
         return data;

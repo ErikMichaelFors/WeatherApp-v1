@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import {MyFavorites} from '../LocalStorageHandler';
 import { API_Weather_Module as WeatherAPI } from '../WeatherAPI'
 import DetailView from './DetailView';
+import ForecastView from './ForecastView';
 //import Img from 'react-image';
 
 class StartPage extends React.Component {
@@ -11,7 +12,7 @@ class StartPage extends React.Component {
         super(props);
         this.state = {
             WeatherData: {"location": {"name": "Stockholm", "localtime": "test time"}, "current": {"temp_c": "40 grader varmt"}},
-            FiveDayForecast: {}
+            ForecastData: {}
         }
     }
 
@@ -23,6 +24,11 @@ class StartPage extends React.Component {
                 WeatherData: data
             });
         });
+        WeatherAPI.GetFiveDayForecast("Stockholm","Sweden").then((data)=>{
+            this.setState({
+                ForecastData: data
+            });
+        });
         console.log("After Mount");
     }
 
@@ -32,11 +38,15 @@ class StartPage extends React.Component {
         <div className="WeatherNow">
             <h1>Weather App</h1>
             <div className="WeatherNowInner">
-                <h2>Dagens väder</h2>
-                <h2>Närmsta fem dagarna</h2>
+                
 
                 <div className="DetailView">
+                    <h2>Dagens väder</h2>
                     <DetailView weatherData={this.state.WeatherData}/>
+                </div>
+                <div className="ForecastView">
+                    <h2>Närmsta fem dagarna</h2>
+                    <ForecastView forecast={this.state.ForecastData}/>
                 </div>
             </div>
         </div>
