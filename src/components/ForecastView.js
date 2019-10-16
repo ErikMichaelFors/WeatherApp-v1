@@ -7,14 +7,14 @@ class ForecastView extends Component {
   constructor(props){
     super(props);
     this.state = {
-      "Forecast" : props.forecast
+      "Forecast" : props.forecast,
+      "List" : ""//JSON.stringify(props.forecast.list)
     }
   }
   render() {
     return (
-      <div>
-          HEJ
-      </div>
+        <div>
+        </div>
     );
   }
 }
