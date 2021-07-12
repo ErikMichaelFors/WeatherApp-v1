@@ -17,7 +17,6 @@
     width: 100%;
     height: 50%;
     padding: 0 0.02vw 45% 0.02vw;
-    /*border: red 1px dotted;  TO-REMOVE */
 }
 
 body{
@@ -33,17 +32,13 @@ body{
 
 #float-row {
     display: flexbox;
-    padding-left: 5%;
-    padding-right: 5%;
     width: 100%;
 }
 
 .DetailView {
     flex: auto;
-    /*border: 1px blue dotted;*/
     position: relative;
     height: 50%;
-    /*float: left;*/
 }
 
 .DetailView#Today{
@@ -55,6 +50,7 @@ body{
     float: left;
     width: 30%;
 }
+.tableforecast
 
 .forecastList li{
     list-style: none;
@@ -68,23 +64,15 @@ body{
     margin: 10px;
 }
 
-.thinner {
-    width: 86%;
-    margin-left: 4vw;
-}
-
-img {
-    /*border: red dotted 1px;*/
-}
-
 .tableSpacing {
     padding-left: var(--table-spacing);
     padding-right: var(--table-spacing);
 }
-
 .tableSpacingRight {
     padding-right: var(--table-spacing);
 }
+
+
 
 .tableSpacingLeft {
     padding-left: var(--table-spacing);
@@ -94,4 +82,41 @@ img {
 
 .ForecastView {
     margin-top: 100px;
+}
+
+
+/* RESPONSIVE */
+@media (min-width: 1701px){
+    table.forecastTable {
+        margin: 0 auto;
+    }
+
+    #float-row .DetailView {
+        width: 33%;
+  }
+}
+
+
+@media (max-width: 1700px){
+    table.forecastTable {
+        margin: 0 auto;
+        max-width: 330px;
+    }
+
+    #float-row .DetailView {
+        width: 50%;
+  }
+}
+
+@media (max-width: 1050px){
+    table.forecastTable {
+        margin: 0 auto;
+    }
+    table.forecastSection {
+        max-width: 330px;
+    }
+
+    #float-row .DetailView {
+        width: 100%;
+  }
 }
